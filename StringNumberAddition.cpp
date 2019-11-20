@@ -48,11 +48,12 @@ int main()
 				*(result + i) = sum;
 			}
 		}
+	cout << "Using stack : ";
 	while (!res.empty()) {
 		cout << res.top();
 		res.pop();
 	}
-	cout << endl;
+	cout << endl << "Without stack: ";
 	int i = 0;
 	while (i < dstring.length()) {
 		cout << *(result + i);
