@@ -1,3 +1,9 @@
+/*
+Author : Partho KR
+Problem: Split an array into two subsets such that every subset contains equal sum.
+
+This program has been implemented by backtracking.
+*/
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Collections;
