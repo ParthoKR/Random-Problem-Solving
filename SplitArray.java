@@ -14,6 +14,13 @@ class Node{
 public class SplitArray {
     static boolean checker = false;
     static Node groot;
+    static boolean shouldJump(Node node, int target){
+        if((node.remainingSum == 0 && node.currentSum != 0) || node.currentSum > target || (node.left != null && node.right != null) || (node.currentSum + node.remainingSum) < target){
+            return true;
+        }else{
+            return false;
+        }
+    }
     static void dfs(Node node, Integer[] nums, int target){
         if(node == groot){
             System.out.println("Called root");
@@ -27,7 +34,7 @@ public class SplitArray {
             return;
         }
         Node newNode = new Node();
-        if((node.remainingSum == 0 && node.currentSum != 0) || node.currentSum > target || (node.left != null && node.right != null) || (node.currentSum + node.remainingSum) < target){
+        if(shouldJump(node, target)){
             newNode = node.parent;
         }else if(node.left == null && node.right == null){
             newNode.i = node.i + 1;
